@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ifreire <ifreire@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 00:00:00 by ifreire           #+#    #+#             */
-/*   Updated: 2026/06/21 01:33:17 by ifreire          ###   ########.fr       */
+/*   Updated: 2026/06/25 00:00:00 by ifreire          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include "libft/libft.h"
+int	ft_putchar(char c)
+{
+	ft_putchar_fd(c, 1);
+	return (1);
+}
 
-int	ft_printf(const char *format, ...);
-int	ft_putchar(char c);
-int	ft_putstr(char *s);
-int	ft_putptr(void *ptr);
-int	ft_putnbr(int n);
-int	ft_putunsigned(unsigned int n);
-int	ft_puthex(unsigned long n, char base);
+int	ft_putstr(char *s)
+{
+	int	len;
 
-#endif
+	if (!s)
+		s = "(null)";
+	len = (int)ft_strlen(s);
+	ft_putstr_fd(s, 1);
+	return (len);
+}

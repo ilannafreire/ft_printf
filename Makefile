@@ -1,9 +1,9 @@
 NAME		= libftprintf.a
 CC		= cc
 CFLAGS		= -Wall -Wextra -Werror
-SRCS		= ft_printf.c ft_printf_utils.c
+SRCS		= ft_printf.c ft_printf_str.c ft_printf_nbr.c
 OBJS		= $(SRCS:.c=.o)
-LIBFT_DIR	= Libft
+LIBFT_DIR	= libft
 LIBFT		= $(LIBFT_DIR)/libft.a
 
 all: $(NAME)
